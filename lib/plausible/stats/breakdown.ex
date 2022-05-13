@@ -347,7 +347,8 @@ defmodule Plausible.Stats.Breakdown do
     from(
       e in q,
       group_by: e.pathname,
-      select_merge: %{page: e.pathname}
+      group_by: e.hostname,
+      select_merge: %{page: e.pathname, hostname: e.hostname}
     )
   end
 

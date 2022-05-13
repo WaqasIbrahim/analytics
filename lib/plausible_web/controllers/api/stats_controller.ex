@@ -460,7 +460,7 @@ defmodule PlausibleWeb.Api.StatsController do
     metrics =
       if params["detailed"],
         do: [:visitors, :pageviews, :bounce_rate, :time_on_page],
-        else: [:visitors]
+        else: [:visitors, :hostname]
 
     pagination = parse_pagination(params)
 
